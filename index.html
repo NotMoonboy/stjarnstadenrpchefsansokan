@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Stjärnstaden Rp - Chef ansökan</title>
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/824381280967327836/1119964286207401994/stjarnstaden_logo_big.png">
+
+	<link rel="stylesheet" href="./css/main.css" />
+</head>
+<body>
+	<main>
+		<section class="section-contact">
+			<div class="container">
+				<h1>Chef ansökan</h1>
+				<p>Hej!</p>
+				<p>Vill du söka till chef? De gör du här men innan du söker till chef borde du läsa detta! När du har skickat in din ansökan så läser vi jobb ansvariga igenom din ansökan.
+					Om vi då tycker att du har skrivit en bra ansökan med bra och mogna svar så kommer vi antingen neka den eller godkänna den till en muntlig intervju. Nu undrar du säkert 
+					vart du ser dina svar? Jo, du ser dina svar i 📖│chef-svar i våran discord. Om du blir godkänd kommer vi dela ut en "väntar på chefs intervju" roll till dig och du kommer 
+					kunna se några helt nya kanaler där du kan hoppa in i ett väntrum när vi skriver att vi tar intervjuer."
+				</p>
+				<p>Lycka till!</p>
+
+				<form
+				method="POST" 
+  				action="https://script.google.com/macros/s/AKfycbyCorossLyet_hb0ePof7l6EgTyYhxdK5fdQW5ZSvMTgLyLBtQRtLyBbullBCL4jKSRNg/exec"
+>					
+					<div class="form-group">
+						<label for="email">Vilket chef-jobb vill du ansöka till?*</label>
+						<input type="text" name="Vilket chef-jobb vill du ansöka till?" id="fname" required class="form-element" placeholder="Ditt svar" />
+					</div>
+					<div class="form-group">
+						<label for="firstname">Vad är ditt namn i verkligheten?*</label>
+						<input 
+							type="text" 
+							name="namn" 
+							id="fname"
+							required 
+							class="form-element"
+							placeholder="Ditt svar" />
+					</div>
+					<div class="form-group">
+						<label for="lastname">Hur gammal är du?*</label>
+						<input type="ålder" name="ålder" id="fname" required class="form-element" placeholder="Ditt svar" />
+					</div>
+					<div class="form-group">
+						<label for="lastname">Vad heter du på discord?*</label>
+						<input type="text" name="Vad heter du på discord?" id="fname" required class="form-element" placeholder="Moon_boy" />
+					</div>
+					<div class="form-group">
+						<label for="lastname">Hur länge har du spelat på Stjärnstaden?*</label>
+						<input type="text" name="Hur länge har du spelat på Stjärnstaden?" id="fname" required class="form-element" placeholder="Ditt svar" />
+					</div>
+					<ul class="form-group full" name="Hur rollspelar du på servern?" id="fname" required class="form-element">
+						<label for="message">Hur rollspelar du på servern?*</label>
+						<li class="inputChoices-choice"><label class="iconic"><input type="checkbox" name="Laglig" value="Ja" class="checkAll375"><i aria-hidden="true"></i><span class="iconic-label" name="Hur rollspelar du på servern?">Laglig</span></label></li>
+						<li class="inputChoices-choice"><label class="iconic"><input type="checkbox" name="Kriminell" value="Ja" class="checkAll375"><i aria-hidden="true"></i><span class="iconic-label" name="Hur rollspelar du på servern?">Kriminell</span></label></li>
+						<li class="inputChoices-choice"><label class="iconic"><input type="checkbox" name="Med i gäng" value="Ja" class="checkAll375"><i aria-hidden="true"></i><span class="iconic-label" name="Hur rollspelar du på servern?">Med i gäng</span></label></li>
+						</ul>
+                    <div class="form-group full">
+						<label for="message">Hur kommer du att utveckla jobbet?*</label>
+						<textarea name="Hur kommer du att utveckla jobbet?" id="fname" required class="form-element" placeholder="Ditt svar"></textarea>
+					</div>
+                    <div class="form-group full">
+						<label for="message">Vilka erfarenheter har du inom jobbet?*</label>
+						<textarea name="Vilka erfarenheter har du inom jobbet?" id="fname" required class="form-element" placeholder="Ditt svar"></textarea>
+					</div>
+					<div class="form-group full">
+						<label for="message">Hur ofta kommer du vara inne på servern?*</label>
+						<textarea name="Hur ofta kommer du vara inne på servern?" id="fname" required class="form-element" placeholder="Ditt svar"></textarea>
+					</div>
+                    <div class="form-group full">
+						<label for="message">Spelar du för tillfället på någon annan server än Stjärnstaden?*</label>
+						<textarea type="text" name="Spelar du för tillfället på någon annan server än Stjärnstaden?" id="fname" required class="form-element" placeholder="Ditt svar" ></textarea>
+					</div>
+					<div class="form-group">
+						<label for="email">Har du läst våra Regler?*</label>
+						<input type="text" name="Har du läst våra Regler?" id="fname" required class="form-element" placeholder="Ditt svar" />
+					</div>
+					<div class="submit-group">
+						<input type="submit" value="SKICKA IN ANSÖKAN" onClick="validation(event)" onclick = "fun();" />
+					</div>
+				</form>
+
+				<!---Scriptet--->
+				<script>
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbyCorossLyet_hb0ePof7l6EgTyYhxdK5fdQW5ZSvMTgLyLBtQRtLyBbullBCL4jKSRNg/exec'
+                const form = document.forms['Staff ansökningar - Sjärnstaden RP']
+              
+                form.addEventListener('submit', e => {
+                  e.preventDefault()
+                  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                    .then(response => console.log('Ansökning är skickad!', response))
+                    .catch(error => console.error('Error!', error.message))
+                })
+
+				function validation() {
+  //                               big D, throws error 
+  // var fname = document.getElementByID("fname").value;
+     var fname = document.getElementById("fname").value;
+  console.log(fname);
+  if (fname == "")
+    alert("Fyll i alla svar först!");  
+}  
+				  </script>
+				  <!---Slutet av Scriptet--->
+
+			</div>
+		</section>
+	</main>
+</body>
+</html>
